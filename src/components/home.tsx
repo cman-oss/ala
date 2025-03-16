@@ -15,6 +15,7 @@ import ProjectsGrid from "./dashboard/ProjectsGrid";
 import LoginModal from "./auth/LoginModal";
 import SignupModal from "./auth/SignupModal";
 import UpgradeModal from "./subscription/UpgradeModal";
+import VideoModal from "./ui/VideoModal";
 import { Button } from "./ui/button";
 
 interface HomeProps {
@@ -183,9 +184,13 @@ const Home = ({
                       any compound.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <Button size="lg" variant="outline">
-                        Watch Demo
-                      </Button>
+                      <VideoModal
+                        videoSrc="https://player.vimeo.com/video/1066236343?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        videoTitle="Revolutionizing Chemistry with AI"
+                        buttonText="Watch Demo"
+                        buttonVariant="outline"
+                        buttonSize="lg"
+                      />
                       <Button size="lg" asChild>
                         <Link to="/pricing">View Pricing</Link>
                       </Button>
