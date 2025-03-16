@@ -23,9 +23,9 @@ function App() {
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/pricing" element={<PricingPage />} />
-          {import.meta.env.VITE_TEMPO && <Route path="/tempobook/*" />}
+          {import.meta.env.VITE_TEMPO ? <Route path="/tempobook/*" /> : null}
         </Routes>
-        {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
+        {import.meta.env.VITE_TEMPO ? useRoutes(routes) : null}
       </>
     </Suspense>
   );

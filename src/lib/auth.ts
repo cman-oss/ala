@@ -14,8 +14,8 @@ export async function signUp(
     options: {
       data: metadata,
       emailRedirectTo: window.location.origin,
-      // Set this to false to disable email confirmation requirement
-      emailConfirmationRequired: false,
+      // Set this to false to disable email verification requirement
+      emailVerification: false,
     },
   });
 
