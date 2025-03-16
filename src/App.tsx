@@ -17,15 +17,15 @@ function App() {
   return (
     <Suspense fallback={<p>Loading...</p>}>
       <>
+        {import.meta.env.VITE_TEMPO && useRoutes(routes)}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/documentation" element={<DocumentationPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/pricing" element={<PricingPage />} />
-          {import.meta.env.VITE_TEMPO ? <Route path="/tempobook/*" /> : null}
+          {import.meta.env.VITE_TEMPO && <Route path="/tempobook/*" />}
         </Routes>
-        {import.meta.env.VITE_TEMPO ? useRoutes(routes) : null}
       </>
     </Suspense>
   );
